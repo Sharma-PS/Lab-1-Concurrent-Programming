@@ -120,7 +120,6 @@ void* perform_operation(void* rank) {
 	int my_last_i = offset + (10000 / noOfThreads);
 	long insertOperation = noOfInsert / noOfThreads;
 	long deleteOperation = noOfDelete / noOfThreads;
-	long memberOperation = noOfMember / noOfThreads;
 
 	for (i = offset; i < my_last_i; i++) {
 		if (i < offset + insertOperation) {

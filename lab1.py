@@ -4,7 +4,7 @@ import math
 
 # Number of samples
 NO_OF_SAMPLES = 100
-
+    
 # Compile source codes
 def compileAll():
     subprocess.call(['gcc', '-o', 'serial', 'serial.c'])
@@ -16,7 +16,7 @@ def execute(command):
     elapsedTimes = []
     for i in range(NO_OF_SAMPLES):
         time = subprocess.Popen(command, stdout=subprocess.PIPE).communicate()[0]
-        elapsedTimes.append(float(time))
+        elapsedTimes.append(abs(float(time)))
 
     average = statistics.mean(elapsedTimes)
     standardDeviation = statistics.stdev(elapsedTimes)

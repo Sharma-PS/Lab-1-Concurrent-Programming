@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/time.h>
+#include <sys/timeb.h>
 #include <pthread.h>
 
 struct Node {
@@ -118,7 +118,6 @@ void *perform_operation(void* rank) {
     long my_rank = (long) rank;
     int i, offset = (10000 * my_rank) / noOfThreads;
     int my_last_i = offset + (10000 / noOfThreads);
-    long memberOperation = noOfMember/ noOfThreads;
     long insertOperation = noOfInsert / noOfThreads;
     long deleteOperation = noOfDelete / noOfThreads;
     
